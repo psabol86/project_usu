@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+    <title>Python Project App</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <a href="/prisoners/new">Novy Vazen</a>
+
+<form action="{{ url_for('search') }}" method="POST">
+  <div class="form-row">
+
+    <div class="form-group col-md-3">
+      <label for="inputFirstName" class="col-form-label">Search: </label>
+      <input type="FirstName" class="form-control" id="inputFirstName" placeholder="search" name="search">
+    </div>
+ 
+  <button type="submit" class="btn btn-primary">Hladat</button>
+</form>
+        <table class="table table-inverse">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for prisoner in prisoners %}
+            <tr>
+              <th scope="row">{{prisoner["id"]}}</th>
+              <td>{{prisoner["first_name"]}}</td>
+              <td>{{prisoner["last_name"]}}</td>
+              <td><a href="/prisoner/{{prisoner['id']}}/edit">Edit</a></td>
+              <td><a href="/prisoner/{{prisoner['id']}}">Detail</a></td>
+              <td><a href="/prisoner/{{prisoner['id']}}/delete">Delete</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+
+        <footer class="footer">
+            <p>&copy; PS 2017</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

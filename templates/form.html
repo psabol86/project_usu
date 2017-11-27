@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+    <title>Vloženie väzňa</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/">Spat</a>
+</nav>
+
+<body>
+
+<h2 align="center">Formulár na vloženie väzňa do systému</h1>
+
+</body>
+<br><br>
+{% if msg %}
+  {{msg}}
+{% endif%}
+
+{% if prisoner %}
+<form action="{{ url_for('update', prisoner_id=prisoner['id']) }}" method="POST">
+{% else %}
+<form action="{{ url_for('create') }}" method="POST">
+{% endif %}  
+  <div class="form-row">
+    
+    <div class="form-group col-md-3">
+      <label for="inputFirstName" class="col-form-label">Meno</label>
+      <input type="FirstName" class="form-control" id="inputFirstName" placeholder="Meno" name="first_name" value="{{prisoner['first_name'] if prisoner}}">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="inputSecondName" class="col-form-label">Priezvisko</label>
+      <input type="SecondName" class="form-control" id="inputSecondName" placeholder="Priezvisko" name="last_name" value="{{prisoner['last_name'] if prisoner}}">
+    </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+    <label for="inputAddress" class="col-form-label">Trvalý pobyt</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Ulica a č. domu" name="addr" value="{{prisoner['addr'] if prisoner}}">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCity" class="col-form-label">Mesto</label>
+      <input type="text" class="form-control" id="inputCity" name="city" value="{{prisoner['city'] if prisoner}}">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Vložiť</button>
+</form>
