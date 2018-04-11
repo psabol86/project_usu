@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+  <title>Python Project App</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/">Späť</a>
+</nav>
+
+<body>
+  <div>
+    <table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Názov Cely</th>
+          <th>Veľkosť</th>
+          <th>Obsadenosť</th>
+          <th>Veľkosť na osobu</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cell in cells %}
+        <tr>
+          <th scope="row">{{cell["id"]}}</th>
+          <td>{{cell["name"]}}</td>
+          <td>{{cell["size"]}} m<sup>2</sup></td>
+          <td>{% if not cell["persons"] %} 0 {% else %} {{cell["persons"]}} {% endif %}</td>
+          <td>{% if not cell["personsize"] %} 0 {% else %} {{cell["personsize"]}} {% endif %} m<sup>2</sup></td>
+          <td><a href="/cell/{{cell['id']}}">Detail</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <footer class="footer">
+      <p>&copy; PS 2018</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

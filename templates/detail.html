@@ -1,15 +1,46 @@
-<nav class="breadcrumb">
-  <a class="breadcrumb-item" href="/">Spat</a>
-</nav>
-<p>
-{{prisoner["first_name"]}}
-</p>
-<p>
-{{prisoner["last_name"]}}
-</p>
-<p>
-{{prisoner["addr"]}}
-</p>
-<p>
-{{prisoner["city"]}}
-</p>
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+  <title>Python Project App</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/">Späť</a>
+  </nav>
+
+  <div class="container">
+    <br><br>
+    <table>
+      <tr>
+          <td width="200px;"><b>Meno:</b></td>
+          <td>{{prisoner["first_name"]}}</td>
+      </tr>
+      <tr>
+          <td><b>Priezvisko:</b></td>
+          <td>{{prisoner["last_name"]}}</td>
+      </tr>
+      <tr>
+          <td><b>Adresa:</b></td>
+          <td>{{prisoner["addr"]}}</td>
+      </tr>
+      <tr>
+          <td><b>Mesto:</b></td>
+          <td>{{prisoner["city"]}}</td>
+      </tr>
+      <tr>
+          <td><b>Trest: </b></td>
+          <td>{% if prisoner["sentence"] %} {{prisoner["sentence"]}} {% else %} Dozivotie {% endif %}</td>
+      </tr>
+      <tr>
+          <td><b>Nazov cely:</b></td>
+          <td>{{cell_name}}</td>
+      </tr>
+    </table>
+    <br/>
+  <p><b>Spoluväzni:</b><br/>
+  {% if msg %} {{msg}} {% else %} {% for p in roommates %} {{ p.first_name }} {{ p.last_name }}<br /> {% endfor %} {% endif %}</p>
+</body>

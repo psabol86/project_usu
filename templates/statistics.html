@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+  <title>Python Project App</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/">Späť</a>
+</nav>
+
+<body>
+  <div>
+    <table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Osoby</th>
+          <th>Cely</th>
+          <th>Celková veľkosť</th>
+          <th>Priemerná plocha na väzňa</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for statistic in statistics %}
+        <tr>
+          <th scope="row">{{statistic["id"]}}</th>
+          <td>{{statistic["persons"]}}</td>
+          <td>{{statistic["cells"]}}</td>
+          <td>{{statistic["allsize"]}} m<sup>2</sup></td>
+          <td>{{statistic["personsize"]}} m<sup>2</sup></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <footer class="footer">
+      <p>&copy; PS 2018</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

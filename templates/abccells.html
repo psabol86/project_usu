@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+    <title>Python Project App</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/">Späť</a>
+</nav>
+
+<body>
+  <div>
+    <table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Meno</th>
+          <th>Priezvisko</th>
+          <th>Cela</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for prisoner in prisoners %}
+        <tr>
+          <th scope="row">{{prisoner["id"]}}</th>
+          <td>{{prisoner["first_name"]}}</td>
+          <td>{{prisoner["last_name"]}}</td>
+          <td>{{prisoner["name"]}}</td>
+
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+        <footer class="footer">
+            <p>&copy; PS 2018</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

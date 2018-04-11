@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+  <title>Python Project App</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/">Späť</a>
+  </nav>
+
+  <div class="container">
+    <br><br>
+    <table>
+      <tr>
+          <td width="200px;"><b>Cela:</b></td>
+          <td>{{cell["name"]}}</td>
+      </tr>
+      <tr>
+          <td><b>Veľkosť</b></td>
+          <td>{{cell["size"]}} m<sup>2</sup></td>
+      </tr>
+    </table>
+    <br/>
+      <p><b>Väzni:</b><br/>
+        {% if msg %}
+        {{msg}}
+        {% else %}
+        {% for p in prisoners %}
+        {{ p.first_name }} {{ p.last_name }}<br />
+        {% endfor %}
+
+        {% endif %}
+      </p>
+</body>
