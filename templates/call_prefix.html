@@ -16,21 +16,21 @@
     <table class="table table-inverse">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Meno</th>
-          <th>Priezvisko</th>
-          <th>Cela</th>
+          <th></th>
+          <th>Mesto</th>
+          <th>Predvoľba</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-      {% for row in prisoners %}
+      {% for n in call_prefix %}
 		<tr>
-			<th scope="row">{{row[0]}}</th>
-			<td>{{row[1]}}</td>
-			<td>{{row[2]}}</td>
-			<td>{{row[3]}}</td>
+			<td></td>
+			<td scope="row">{{n[0]}}</td>
+			<td>{{n[1]}}</td>
+			<td></td>
 		</tr>
-	  {% endfor %}
+	     {% endfor %}
       </tbody>
     </table>
 

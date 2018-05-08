@@ -4,7 +4,7 @@
 
 <head>
   <title>Python Project App</title>
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <nav class="breadcrumb">
@@ -24,8 +24,8 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        {% for cell in cells %}
+      		<tbody>
+        <!-- {% for cell in cells %}
         <tr>
           <th scope="row">{{cell["id"]}}</th>
           <td>{{cell["name"]}}</td>
@@ -34,8 +34,19 @@
           <td>{% if not cell["personsize"] %} 0 {% else %} {{cell["personsize"]}} {% endif %} m<sup>2</sup></td>
           <td><a href="/cell/{{cell['id']}}">Detail</a></td>
         </tr>
-        {% endfor %}
-      </tbody>
+        {% endfor %} -->
+
+				{% for cell in cells %}
+				<tr>
+					<th scope="row">{{cell[0]}}</th>
+					<td>{{cell[1]}}</td>
+					<td>{{cell[2]}} m<sup>2</sup></td>
+					<td>{% if not cell[3] %} 0 {% else %} {{cell[3]}} {% endif %}</td>
+					<td>{% if not cell[4] %} - {% else %} {{cell[4]}} m<sup>2</sup> {% endif %}</td>
+					<td><a href="/cell/{{cell[0]}}">Detail</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
     </table>
 
     <footer class="footer">

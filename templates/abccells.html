@@ -4,7 +4,7 @@
 
 <head>
     <title>Python Project App</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <nav class="breadcrumb">
@@ -24,14 +24,15 @@
       </thead>
       <tbody>
       {% for prisoner in prisoners %}
-        <tr>
-          <th scope="row">{{prisoner["id"]}}</th>
-          <td>{{prisoner["first_name"]}}</td>
-          <td>{{prisoner["last_name"]}}</td>
-          <td>{{prisoner["name"]}}</td>
-
-        </tr>
-      {% endfor %}
+		<tr>
+			<th scope="row">{{prisoner[0]}}</th>
+			<td>{{prisoner[1]}}</td>
+			<td>{{prisoner[2]}}</td>
+			<td>{{prisoner[3]}}</td>
+		</tr>
+	  {% endfor %}
+      
+      
       </tbody>
     </table>
 

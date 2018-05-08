@@ -4,7 +4,7 @@
 
 <head>
   <title>Python Project App</title>
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <nav class="breadcrumb">
@@ -16,7 +16,7 @@
     <table class="table table-inverse">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
           <th>Osoby</th>
           <th>Cely</th>
           <th>Celková veľkosť</th>
@@ -27,11 +27,11 @@
       <tbody>
         {% for statistic in statistics %}
         <tr>
-          <th scope="row">{{statistic["id"]}}</th>
-          <td>{{statistic["persons"]}}</td>
-          <td>{{statistic["cells"]}}</td>
-          <td>{{statistic["allsize"]}} m<sup>2</sup></td>
-          <td>{{statistic["personsize"]}} m<sup>2</sup></td>
+          <th scope="row"></th>
+          <td>{{statistic[0]}}</td>
+          <td>{{statistic[1]}}</td>
+          <td>{{statistic[2]}} m<sup>2</sup></td>
+          <td>{{statistic[3]}} m<sup>2</sup></td>
         </tr>
         {% endfor %}
       </tbody>
